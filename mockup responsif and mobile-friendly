@@ -1,0 +1,106 @@
+#html default
+<nav id="main-navigation" class="navbar">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/products">Products</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+#CSS default
+.navbar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+#responsif and mobile-friendly
+<nav id="main-navigation" class="navbar">
+  <button class="navbar-toggler" aria-label="Toggle navigation">
+    ☰
+  </button>
+  <ul class="navbar-menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/products">Products</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+.navbar {
+  position: relative;
+  background: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-menu li {
+  margin-right: 20px;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background: #f9f9f9;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+  .navbar-menu.show {
+    display: flex;
+  }
+  .navbar-menu li {
+    margin: 0;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggler = document.querySelector('.navbar-toggler');
+  const menu = document.querySelector('.navbar-menu');
+  toggler.addEventListener('click', function () {
+    menu.classList.toggle('show');
+  });
+});
+</script>
+
+
